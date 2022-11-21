@@ -4,32 +4,32 @@ const team= [
     {
         "name" : "Wayne Barnett",
         "role" : "Founder & CEO",
-        "image" : "/img/wayne-barnett-founder-ceo.jpg"
+        "image" : "wayne-barnett-founder-ceo.jpg"
     },
     {
         "name" : "Angela Caroll",
         "role" : "Chief Editor",
-        "image" : "/img/angela-caroll-chief-editor.jpg"
+        "image" : "angela-caroll-chief-editor.jpg"
     },
     {
         "name" : "Walter Gordon",
         "role" : "Office Manager",
-        "image" : "/img/walter-gordon-office-manager.jpg"
+        "image" : "walter-gordon-office-manager.jpg"
     },
     {
         "name" : "Angela Lopez",
         "role" : "Social Media Manager",
-        "image" : "/img/angela-lopez-social-media-manager.jpg"
+        "image" : "angela-lopez-social-media-manager.jpg"
     },
     {
         "name" : "Scott Estrada",
         "role" : "Developer",
-        "image" : "/img/scott-estrada-developer.jpg"
+        "image" : "scott-estrada-developer.jpg"
     },
     {
         "name" : "Barbara Ramos",
         "role" : "Graphic Designer",
-        "image" : "/img/barbara-ramos-graphic-designer.jpg"
+        "image" : "barbara-ramos-graphic-designer.jpg"
     }    
 ];
 
@@ -39,21 +39,20 @@ const team= [
 
      
 let teamSpace= document.getElementById('team');
-let newDiv= document.createElement('div');
-let newHeading= document.createElement('h3');
-let newSub= document.createElement('sub');
-let newImg;
+
     
 for (let i=0; i<team.length; i++){
     let member= team[i];
-    console.log(`${member.name} ${member.role} ${member.image}`)
-    let newImg= `<img src=${member.img} alt="${member.name}">`
-
-    newDiv.innerHTML += (newHeading, newSub, newImg);
-    teamSpace.innerHTML += newDiv;   
-
-    newHeading.innerHTML += `${member.name}`;
-    newSub.innerHTML += `${member.role}`;
-        
+    console.log(`${member.name} ${member.role} ${member.image}`); 
     
+    
+    let newDiv= document.createElement('div');
+    let newHeading= `<h3>${member.name}</h3>`;
+    let newSub= `<sub>${member.role}</sub>`;
+    let newImg= `<img src= "img/${member.image}">`;
+
+    newDiv.innerHTML = `${newImg}  ${newHeading}  ${newSub}`;
+    newDiv.classList.add('schede');
+
+    teamSpace.append(newDiv);
 }
